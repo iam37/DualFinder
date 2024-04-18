@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import Model
+from keras.models import Model
 import os
 from os.path import exists
 import glob

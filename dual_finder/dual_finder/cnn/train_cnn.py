@@ -7,7 +7,7 @@ from keras import layers, models
 from keras.callbacks import EarlyStopping
 from keras.callbacks import Callback
 from sklearn.preprocessing import LabelEncoder
-from tensorflow.keras.utils import to_categorical
+from keras.utils import to_categorical
 from sklearn.utils.class_weight import compute_class_weight
 from sklearn.metrics import make_scorer, accuracy_score
 from keras import backend as K
@@ -20,11 +20,10 @@ import os
 from os import listdir
 from os.path import isfile, join
 from os.path import exists
-from optuna.integration import TFKerasPruningCallback
 
-from create_cnn import ModelCreator
-from load_model import loadModelClass
-from extract_feature_maps import FeatureExtractor
+from .create_cnn import ModelCreator
+from .load_model import loadModelClass
+from .extract_feature_maps import FeatureExtractor
 import warnings
 
 import logging
@@ -175,24 +174,7 @@ class DualFinder:
                 np.save(model_filepath + "/saved_history", history.history)
                 model.save(model_filepath + "/saved_model_" + str(self.epoch) + ".h5")#saving model in HDF5 format. Might be easier to load in the future
                 return history, model
-        if self.model_type == 'ViT':
-            with warnings.catch_warnings():
-                warnings.filterwarnings("ignore", category=FutureWarning)
-                warnings.filterwarnings("ignore", category=UserWarning)
-                warnings.filterwarnings("ignore", category=DeprecationWarning)
-
-
-                model = create_ViT_model(image_shape, self.learningRate, num_classes)  # Build the model
-                model.build((None,) + image_shape)
-                model.summary()
-                if not exists(model_filepath):
-                    os.makedirs(model_filepath)
-                cp_callback = tf.keras.callbacks.ModelCheckpoint("best_model.h5", monitor = 'val_precision', save_best_only = True)
-                early_stopping = EarlyStopping(monitor='val_f1_score', patience=3, mode = "max", restore_best_weights = True)
-                history = model.fit(self.train_dataset, train_labels_one_hot, batch_size = self.batchSize, verbose = 1, validation_data = (self.validation_dataset, val_labels_one_hot), epochs = self.epoch, class_weight = class_weightsDict, callbacks = [cp_callback, early_stopping], shuffle = True, use_multiprocessing = True)
-
-                return history, model
-
+                
     def predict(self, model, dataset):
         return model.predict(dataset)
         
