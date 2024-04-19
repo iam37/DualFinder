@@ -1,0 +1,9 @@
+.DS_Store
+confirmed_single_AGN_fall/
+Double_AGN_CNN/
+Gaussian_simulated_images/
+saved_models/
+saved_models_better_params/
+saved_models_example_modelB/
+saved_optimization_trials/
+.pypirc
