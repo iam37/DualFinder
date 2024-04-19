@@ -19,54 +19,47 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import importlib
 import sys
 #!pwd
-sys.path.append("dual_finder/dual_finder")
+sys.path.append("dual_finder/dual_finder/preprocess_data/")
+#os.chdir("dual_finder/dual_finder/preprocess_data/")
+sys.path.append("dual_finder/dual_finder/cnn/")
+sys.path.append("dual_finder/dual_finder/visualize/")
+sys.path.append("dual_finder/dual_finder/optimize/")
+#os.chdir("/vast/palmer/scratch/urry/iam37/astr330")
+#os.chdir("dual_finder/dual_finder/cnn/")
+
+from process_data import create_dataset
+
+from fits_utils import modified_plot_image as plot_image
+
+from fits_utils import plot_dataset_sample
+
+from create_cnn import ModelCreator
+
+from load_model import loadModelClass
+
+from train_cnn import DualFinder
+
+from extract_feature_maps import FeatureExtractor
+
+from optimize_hyperparameters import OptimizeHyperparameters
+from visualize_performance import load_training_history, plot_training_progress, plot_grouped_training_progress, VisualizeOptimization
+
 %load_ext autoreload
 %reload_ext autoreload
 %autoreload 2
-#sys.path.append("dual_finder/dual_finder/preprocess_data/")
-#os.chdir("dual_finder/dual_finder/preprocess_data/")
-#sys.path.append("dual_finder/dual_finder/cnn/")
-#sys.path.append("dual_finder/dual_finder/visualize/")
-#sys.path.append("dual_finder/dual_finder/optimize/")
-#os.chdir("/vast/palmer/scratch/urry/iam37/astr330")
-#os.chdir("dual_finder/dual_finder/cnn/")
-#os.chdir("dual_finder/dual_finder")
-!pwd
-from preprocess_data.process_data import create_dataset
-
-from preprocess_data.fits_utils import modified_plot_image as plot_image, plot_dataset_sample
-
-from cnn.create_cnn import ModelCreator
-
-from cnn.load_model import loadModelClass
-
-from cnn.train_cnn import DualFinder
-
-from cnn.extract_feature_maps import FeatureExtractor
-
-from optimize.optimize_hyperparameters import OptimizeHyperparameters
-from visualize.visualize_performance import load_training_history, plot_training_progress, plot_grouped_training_progress, VisualizeOptimization
-
 #os.chdir("/vast/palmer/scratch/urry/iam37/astr330")
 ------------------
 
------ stdout -----
-/Users/moskowitzi/Desktop/Junior_Year_at_Yale/Spring_Semester/ASTR_330/final_project_git_repo/DualFinder/dual_finder_book
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[2], line 18[0m
-[1;32m      9[0m [38;5;66;03m#sys.path.append("dual_finder/dual_finder/preprocess_data/")[39;00m
-[1;32m     10[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder/preprocess_data/")[39;00m
-[1;32m     11[0m [38;5;66;03m#sys.path.append("dual_finder/dual_finder/cnn/")[39;00m
-[0;32m   (...)[0m
-[1;32m     15[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder/cnn/")[39;00m
-[1;32m     16[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder")[39;00m
-[1;32m     17[0m get_ipython()[38;5;241m.[39msystem([38;5;124m'[39m[38;5;124mpwd[39m[38;5;124m'[39m)
-[0;32m---> 18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpreprocess_data[39;00m[38;5;21;01m.[39;00m[38;5;21;01mprocess_data[39;00m [38;5;28;01mimport[39;00m create_dataset
-[1;32m     20[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpreprocess_data[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m modified_plot_image [38;5;28;01mas[39;00m plot_image, plot_dataset_sample
-[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mcnn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcreate_cnn[39;00m [38;5;28;01mimport[39;00m ModelCreator
+Cell [0;32mIn[2], line 13[0m
+[1;32m      9[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend([38;5;124m"[39m[38;5;124mdual_finder/dual_finder/optimize/[39m[38;5;124m"[39m)
+[1;32m     10[0m [38;5;66;03m#os.chdir("/vast/palmer/scratch/urry/iam37/astr330")[39;00m
+[1;32m     11[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder/cnn/")[39;00m
+[0;32m---> 13[0m [38;5;28;01mfrom[39;00m [38;5;21;01mprocess_data[39;00m [38;5;28;01mimport[39;00m create_dataset
+[1;32m     15[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m modified_plot_image [38;5;28;01mas[39;00m plot_image
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m plot_dataset_sample
 
-[0;31mModuleNotFoundError[0m: No module named 'preprocess_data'
+[0;31mModuleNotFoundError[0m: No module named 'process_data'
 
