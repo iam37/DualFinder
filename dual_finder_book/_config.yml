@@ -32,4 +32,9 @@ html:
   use_repository_button: true
 
 launch_buttons:
-  binderhub_url: "https://mybinder.org"
+  binderhub_url: https://mybinder.org
+  notebook_interface: classic  # or "classic" for classic notebook interface
+repository:
+  url: https://github.com/iam37/DualFinder.git  # Update this with your GitHub repository URL
+  path_to_book: dual_finder_book/  # If your book is in a sub-directory of your repository
+  branch: main  # the Git branch on which your book is hosted
