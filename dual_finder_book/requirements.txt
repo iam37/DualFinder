@@ -1,0 +1,10 @@
+jupyter-book
+matplotlib
+numpy
+tensorflow
+optuna
+tqdm
+astropy
+pandas
+streamlit
+sklearn
