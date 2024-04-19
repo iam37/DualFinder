@@ -6,6 +6,33 @@ from keras import layers, models
 # How can I import the functions from preprocess_data module?
 
 class ModelCreator:
+    """
+    A class to create and compile the DualFinder CNN tailored for image classification tasks.
+
+    Parameters
+    ----------
+    image_shape : tuple
+        The shape of the input images (height, width, channels).
+    learning_rate : float
+        The initial learning rate for the Adam optimizer.
+    num_classes : int
+        The number of classes for the output layer of the model.
+    display_architecture : bool, optional
+        Whether to display the model architecture upon creation (default is True).
+
+    Methods
+    -------
+    f1_score(y_true, y_pred)
+        Calculate the F1 score, a harmonic mean of precision and recall.
+    static_f1_score(y_true, y_pred)
+        Calculate the F1 score statically (class method), without needing a class instance.
+    MCC(y_true, y_pred)
+        Calculate the Matthews correlation coefficient, a measure of the quality of binary classifications.
+    static_MCC(y_true, y_pred)
+        Calculate the Matthews correlation coefficient (static method, to be accessed later without creating a DualFinder instance).
+    create_model(dropout, display_architecture=True)
+        Construct and compile the neural network model based on the initial parameters and the specified dropout rate.
+    """
     def __init__(self, image_shape, learning_rate, num_classes, display_architecture = True):
         self.image_shape = image_shape
         self.learning_rate = learning_rate

@@ -80,10 +80,14 @@ class FeatureExtractor:
         plt.close(fig)
 
 def create_gif(feature_map_filepath, output_gif_name):
+    """
+    Creates animated .gif formatted file using matplotlib's FuncAnimate function of the saved feature maps from training.
+    Outputs to a specified filepath as a GIF. 
+    """
     feature_map_images = []
     output_directory = os.path.dirname(output_gif_name)
 
-    # Function required by FuncAnimate 
+    # Function required by FuncAnimate to update the frames in the animation. 
     def update(frame_index, img_list, img_plot):
         img_plot.set_array(img_list[frame_index])
         return [img_plot]
