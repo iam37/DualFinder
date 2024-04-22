@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
      name="DualFinder",
-     version="1.0.0",
+     version="1.1.0",
      author="Isaac Moskowitz",
      author_email="isaac.moskowitz@yale.edu",
      description="A trainable and visualizable convolutional neural network designed to detect galaxy and AGN mergers. ",
