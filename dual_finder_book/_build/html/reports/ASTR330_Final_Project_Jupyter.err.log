@@ -19,30 +19,25 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import importlib
 import sys
 #!pwd
-sys.path.append("dual_finder/dual_finder/preprocess_data/")
+sys.path.append("dual_finder/dual_finder/")
 #os.chdir("dual_finder/dual_finder/preprocess_data/")
-sys.path.append("dual_finder/dual_finder/cnn/")
-sys.path.append("dual_finder/dual_finder/visualize/")
-sys.path.append("dual_finder/dual_finder/optimize/")
-#os.chdir("/vast/palmer/scratch/urry/iam37/astr330")
-#os.chdir("dual_finder/dual_finder/cnn/")
 
-from process_data import create_dataset
+from preprocess_data.process_data import create_dataset
 
-from fits_utils import modified_plot_image as plot_image
+from preprocess_data.fits_utils import modified_plot_image as plot_image
 
-from fits_utils import plot_dataset_sample
+from preprocess_data. fits_utils import plot_dataset_sample
 
-from create_cnn import ModelCreator
+from cnn.create_cnn import ModelCreator
 
-from load_model import loadModelClass
+from cnn.load_model import loadModelClass
 
-from train_cnn import DualFinder
+from cnn.train_cnn import DualFinder
 
-from extract_feature_maps import FeatureExtractor
+from cnn.extract_feature_maps import FeatureExtractor
 
-from optimize_hyperparameters import OptimizeHyperparameters
-from visualize_performance import load_training_history, plot_training_progress, plot_grouped_training_progress, VisualizeOptimization
+from optimize.optimize_hyperparameters import OptimizeHyperparameters
+from visualize.visualize_performance import load_training_history, plot_training_progress, plot_grouped_training_progress, VisualizeOptimization
 
 %load_ext autoreload
 %reload_ext autoreload
@@ -53,13 +48,12 @@ from visualize_performance import load_training_history, plot_training_progress,
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[2], line 13[0m
-[1;32m      9[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend([38;5;124m"[39m[38;5;124mdual_finder/dual_finder/optimize/[39m[38;5;124m"[39m)
-[1;32m     10[0m [38;5;66;03m#os.chdir("/vast/palmer/scratch/urry/iam37/astr330")[39;00m
-[1;32m     11[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder/cnn/")[39;00m
-[0;32m---> 13[0m [38;5;28;01mfrom[39;00m [38;5;21;01mprocess_data[39;00m [38;5;28;01mimport[39;00m create_dataset
-[1;32m     15[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m modified_plot_image [38;5;28;01mas[39;00m plot_image
-[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m plot_dataset_sample
+Cell [0;32mIn[2], line 8[0m
+[1;32m      5[0m sys[38;5;241m.[39mpath[38;5;241m.[39mappend([38;5;124m"[39m[38;5;124mdual_finder/dual_finder/[39m[38;5;124m"[39m)
+[1;32m      6[0m [38;5;66;03m#os.chdir("dual_finder/dual_finder/preprocess_data/")[39;00m
+[0;32m----> 8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpreprocess_data[39;00m[38;5;21;01m.[39;00m[38;5;21;01mprocess_data[39;00m [38;5;28;01mimport[39;00m create_dataset
+[1;32m     10[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpreprocess_data[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfits_utils[39;00m [38;5;28;01mimport[39;00m modified_plot_image [38;5;28;01mas[39;00m plot_image
+[1;32m     12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpreprocess_data[39;00m[38;5;21;01m.[39;00m fits_utils [38;5;28;01mimport[39;00m [38;5;21;01mplot_dataset_sample[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'process_data'
+[0;31mModuleNotFoundError[0m: No module named 'preprocess_data'
 
