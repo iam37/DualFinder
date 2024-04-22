@@ -4,7 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
 - file: content/ASTR330_Final_Project_Jupyter

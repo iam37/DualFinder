@@ -1,11 +1,9 @@
-# Welcome to your Jupyter Book
+# Welcome to Machine Learning for Astrophysical Purposes.
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+Here we present a comprehensive guide for how to design, train, and test a convolutional neural network to perform a particular data analysis task in astrophysics, in this case finding dual AGN candidates in large sky survey fields. This page provides MyST documentation for the Jupyter Notebook that accompanies the `DualFinder` package, which is both pip-installable with the phrase `pip install DualFinder` and available from our GitHub at [DualFinder GitHub Link](https://github.com/iam37/DualFinder). Training datasets can be found [at this dropbox link](https://www.dropbox.com/scl/fo/y7mv5g6zkog15xppm7sa5/AKzHkCDeBPiwJrEof6J9ppk?rlkey=i7m1sjqlgstyidss1l1n4b78h&st=fxij06wd&dl=0). We hope you find this in-depth walk through of the many parts that power convolutional neural networks helpful and rewarding, and we thank you for checking out our tutorial!
+ - Author: Isaac Moskowitz.
+ - Professor Earl Bellinger, Sebastian Monzon.
+ - ASTR 330 Final Project, Yale University Department of Astronomy.
 
 ```{tableofcontents}
 ```
